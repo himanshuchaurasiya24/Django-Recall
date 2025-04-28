@@ -48,7 +48,7 @@ def student_detail_api(request, pk):
     elif request.method == 'DELETE':
         serializer = StudentSerializer(student)
         student.delete()
-        return Response(serializer.data, status= status.HTTP_200_OK)
+        return Response(serializer.data, status= status.HTTP_204_NO_CONTENT)
         
             
         
