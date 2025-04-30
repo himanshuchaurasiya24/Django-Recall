@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from employee import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #web applications endpoints
@@ -24,6 +23,6 @@ urlpatterns = [
     #api endpoints
     path('students_api/', include('students_api.urls')), # redirects to students app urls.py file
     #Employee app urls for class based views
-    path('employee/',include('employee.urls')), # redirects to students app urls.py file
+    path('employees/',include('employee.urls')), # redirects to students app urls.py file
 
 ]
