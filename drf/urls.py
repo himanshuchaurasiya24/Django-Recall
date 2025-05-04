@@ -24,5 +24,7 @@ urlpatterns = [
     path('students_api/', include('students_api.urls')), # redirects to students app urls.py file
     #Employee app urls for class based views
     path('employees/',include('employee.urls')), # redirects to students app urls.py file
+    #Blog app urls for class based views
+    path('blogs/',include('blog.urls')), # redirects to students app urls.py file
 
 ]
