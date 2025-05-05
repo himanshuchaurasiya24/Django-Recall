@@ -1,4 +1,6 @@
 from django.http import Http404
+
+from employee.filters import EmployeeFilter
 from .models import *
 from django.shortcuts import render, get_object_or_404
 from .serializers import *
@@ -118,5 +120,7 @@ class EmployeeViewSet(viewsets.ViewSet):
 class EmployeeModelViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
-    pagination_class = CustomPagination # Custom Pagination class
+    # pagination_class = CustomPagination # Custom Pagination class
+    # filterset_fields = ['designation', 'employee_name', 'employee_id'] # Filter by designation
+    filterset_class = EmployeeFilter # Filter by designation using django-filter
 
