@@ -6,8 +6,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import mixins, generics,viewsets
+from employee.paginations import CustomPagination
 
-# video at 02:53:36
+
 
 # Method 1: Using APIView class
 
@@ -117,4 +118,5 @@ class EmployeeViewSet(viewsets.ViewSet):
 class EmployeeModelViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+    pagination_class = CustomPagination # Custom Pagination class
 
